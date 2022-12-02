@@ -1,12 +1,16 @@
-import React, { useState, useRef, useEffect } from 'react';
-import TodoList from './TodoList'
-import { v4 as uuidv4 } from 'uuid'
-import Ridetail from './Ridetail'
-import { Route, Routes } from "react-router-dom"
 import Navbar from "./Navbar"
 
 import Home from "./pages/Home"
 import Search from "./pages/Search"
+import Todo from "./pages/Todo"
+import Ridetail from "./pages/Ridetail"
+
+import TodoList from './TodoList'
+
+import React, { useState, useRef, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid'
+import { Route, Routes } from "react-router-dom"
+
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -55,6 +59,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/todo" element={<Todo />} />
+          <Route path="/ridetail" element={<Ridetail />} />
 
           
         </Routes>
@@ -70,7 +76,7 @@ function App() {
       <button onClick={handleAddTodo}>Add Ride</button>
       <button onClick={handleClearTodos}>Clear Edit Complete</button>
       <div>{todos.filter(todo => !todo.complete).length} left to do</div>
-      <Ridetail />
+
     </>
   )
 }

@@ -9,7 +9,9 @@ export default function Navbar() {
       <ul>
 
         <CustomLink to="/">Home</CustomLink>
-        <CustomLink to="/">Search</CustomLink>
+        <CustomLink to="/search">Search</CustomLink>
+        <CustomLink to="/todo">Todo</CustomLink>
+        <CustomLink to="/Ridetail">Rydes</CustomLink>
 
         hehe
       </ul>

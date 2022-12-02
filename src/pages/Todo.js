@@ -9,8 +9,10 @@ export default function Todo({ todo, toggleTodo }) {
     <div>
       <label>
         <input type="checkbox" checked={todo.complete} onChange={handleTodoClick} />
-        <strong>from:</strong> {todo.fromStation} -> <strong>to:</strong> {todo.toStation}
+        <strong>from:</strong> {todo.fromStation} → <strong>to:</strong> {todo.toStation}
       </label>
+
+    
     </div>
   )
 }
