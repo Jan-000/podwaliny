@@ -7,13 +7,9 @@ export default function Navbar() {
         Site Name
       </Link>
       <ul>
-
         <CustomLink to="/">Home</CustomLink>
         <CustomLink to="/search">Search</CustomLink>
-        <CustomLink to="/todo">Todo</CustomLink>
         <CustomLink to="/Ridetail">Rydes</CustomLink>
-
-        hehe
       </ul>
     </nav>
   )

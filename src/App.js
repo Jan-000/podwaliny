@@ -5,52 +5,16 @@ import Search from "./pages/Search"
 import Todo from "./pages/Todo"
 import Ridetail from "./pages/Ridetail"
 
-import TodoList from './TodoList'
 
-import React, { useState, useRef, useEffect } from 'react';
-import { v4 as uuidv4 } from 'uuid'
+import React from 'react';
+
 import { Route, Routes } from "react-router-dom"
 
 
-const LOCAL_STORAGE_KEY = 'todoApp.todos'
+
 
 function App() {
-  const [todos, setTodos] = useState([])
-  const todoNameRef = useRef()
-  const todoNameRef2 = useRef()
-
-
-  useEffect(() => {
-    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-    if (storedTodos) setTodos(storedTodos)
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
-  }, [todos])
-
-  function toggleTodo(id) {
-    const newTodos = [...todos]
-    const todo = newTodos.find(todo => todo.id === id)
-    todo.complete = !todo.complete
-    setTodos(newTodos)
-  }
-
-  function handleAddTodo(e) {
-    const fromStation = todoNameRef.current.value
-    const toStation = todoNameRef2.current.value
-    if (fromStation === ''&&toStation === '') return
-    setTodos(prevTodos => {
-      return [...prevTodos, { id: uuidv4(), fromStation: fromStation, toStation: toStation, complete: false}]
-    })
-    todoNameRef.current.value = null
-    todoNameRef2.current.value = null
-  }
-
-  function handleClearTodos() {
-    const newTodos = todos.filter(todo => !todo.complete)
-    setTodos(newTodos)
-  }
+  
 
   return (
     <>
@@ -59,7 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/todo" element={<Todo />} />
+
           <Route path="/ridetail" element={<Ridetail />} />
 
           
@@ -67,15 +31,8 @@ function App() {
       </div>
 
 
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
-      <input placeholder="from" ref={todoNameRef} type="text" />
-      <br />
-      <input placeholder="to" ref={todoNameRef2} type="text" />
-      <br />
+    <p>marker</p>
 
-      <button onClick={handleAddTodo}>Add Ride</button>
-      <button onClick={handleClearTodos}>Clear Edit Complete</button>
-      <div>{todos.filter(todo => !todo.complete).length} left to do</div>
 
     </>
   )
