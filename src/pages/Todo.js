@@ -10,6 +10,7 @@ export default function Todo({ todo, toggleTodo }) {
       <label>
         <input type="checkbox" checked={todo.complete} onChange={handleTodoClick} />
         <strong>from:</strong> {todo.fromStation} → <strong>to:</strong> {todo.toStation}
+        <a href="/ridetail">detail</a>
       </label>
 
     

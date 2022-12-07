@@ -1,13 +1,4 @@
-import React from 'react'
-
 export default function Ridetail() {
+    return <h1>Sowas.</h1>
+  }
   
-  return (
-    <div>
-      <label>
-
-        <strong>Clicked journey detail</strong>
-      </label>
-    </div>
-  )
-}

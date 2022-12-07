@@ -4,12 +4,12 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <Link to="/" className="site-title">
-        Site Name
+        MB
       </Link>
       <ul>
         <CustomLink to="/">Home</CustomLink>
         <CustomLink to="/search">Search</CustomLink>
-        <CustomLink to="/Ridetail">Rydes</CustomLink>
+        <CustomLink to="/create">Create</CustomLink>
       </ul>
     </nav>
   )
